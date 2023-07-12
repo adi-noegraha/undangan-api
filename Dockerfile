@@ -11,18 +11,3 @@ RUN composer install --prefer-dist --no-interaction
 
 COPY docker/apache/000-default.conf /etc/apache2/sites-available/000-default.conf
 
-#RUN apt update -y
-#RUN apt install -y libreoffice
-
-RUN php artisan config:cache && \
-    php artisan route:cache && \
-    chmod 777 -R /var/www/html/storage/ && \
-    chown -R www-data:www-data /var/www/ && \
-    a2enmod rewrite
-
-#RUN php composer.phar install && \
-#    php artisan key:generate && \
-#    php artisan route:clear && \
-#    php artisan cache:clear && \
-#    php artisan config:clear && \
-#    php artisan view:clear
