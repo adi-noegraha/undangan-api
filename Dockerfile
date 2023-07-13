@@ -2,8 +2,8 @@ FROM quay.io/adifarhan/disnaker-l9:1.0
 
 COPY . /var/www/html/
 
-RUN composer require spatie/laravel-permission ^5.10
-RUN composer require maatwebsite/excel:^3.1
+RUN composer require 'phpoption/phpoption'
+RUN composer require 'vlucas/phpdotenv'
 
 RUN composer install --prefer-dist --no-interaction
 
